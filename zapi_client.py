@@ -12,6 +12,10 @@ class ZAPIClient:
 
         logging.debug(f"Cliente Z-API criado. URL base: {self._get_base_url()}")
 
+    @staticmethod
+    def get_default_message(name: str) -> str:
+        return f"Olá, {name}! Tudo bem com você?"
+
     """
     Envia uma mensagem a um número
     params:
