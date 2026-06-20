@@ -1,8 +1,6 @@
 import requests
 import logging
 
-logging.basicConfig(level=logging.INFO)
-
 class ZAPIClient:
 
     API_URL = "https://api.z-api.io"
@@ -35,7 +33,6 @@ class ZAPIClient:
 
         return response.json()
 
-    
     def _get_base_url(self) -> str:
         return f"{self.API_URL}/instances/{self.instance_id}/token/{self.instance_token}"
     
