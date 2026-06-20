@@ -1,8 +1,12 @@
 from supabase import create_client
+from supabase import SupabaseException
 
 class DBClient:
     def __init__(self, url: str, key: str):
-        self.client = create_client(url, key)
+        try:
+            self.client = create_client(url, key)
+        except SupabaseException as e:
+            raise RuntimeError(f"Failed to initialize Supabase client: {e}") from e
 
     def insert(self, table: str, data: dict):
         return self.client.table(table).insert(data).execute().data
