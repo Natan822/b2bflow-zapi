@@ -14,6 +14,7 @@ def print_users_table(table: list[dict]):
 def main():
     SUPA_URL = os.getenv("SUPABASE_URL")
     SUPA_KEY = os.getenv("SUPABASE_KEY")
+    SUPA_TABLE_NAME = os.getenv("SUPABASE_TABLE_NAME")
 
     ZAPI_INSTANCE_ID = os.getenv("ZAPI_INSTANCE_ID")
     ZAPI_INSTANCE_TOKEN = os.getenv("ZAPI_INSTANCE_TOKEN")
@@ -22,7 +23,7 @@ def main():
     db = DBClient(SUPA_URL, SUPA_KEY)
     zapi = ZAPIClient(ZAPI_INSTANCE_ID, ZAPI_INSTANCE_TOKEN, ZAPI_CLIENT_TOKEN)
     
-    users = db.all("users")
+    users = db.all(SUPA_TABLE_NAME)
     print_users_table(users)
     
     ids = input("Digite os ID's dos usuários a serem contatados separados por um espaço (Ex.: 12 100 30):").split(" ")
