@@ -20,7 +20,7 @@ Este é um projeto para a demonstração do uso da Z-API integrada a um back-end
 ## Instalação
 1. Clone o projeto
 ```cmd
-git clone https://github.com/Natan822/b2bflow-zapi
+git clone https://github.com/Natan822/b2bflow-zapi.git
 cd b2bflow-zapi
 ```
 
