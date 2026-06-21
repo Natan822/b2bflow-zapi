@@ -52,7 +52,7 @@ class ZAPIClient:
             "Content-Type" : "application/json"
         }
     
-    def _get_send_message_payload(self, phone, message) -> dict:
+    def _get_send_message_payload(self, phone: str, message: str) -> dict:
         return {
             "phone": phone,
             "message": message
